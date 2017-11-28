@@ -1,0 +1,241 @@
+/**********************meyers**************************/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: inherit;
+	vertical-align: baseline;
+}
+/* remember to define focus styles! */
+:focus {
+	outline: 0;
+}
+body {
+	line-height: 1;
+	color: black;
+	background: white;
+}
+ol, ul {
+	list-style: none;
+}
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+	border-collapse: separate;
+	border-spacing: 0;
+}
+caption, th, td {
+	text-align: left;
+	font-weight: normal;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: "";
+}
+blockquote, q {
+	quotes: "" "";
+}
+
+/**********************clearfix**************************/
+
+.clearfix:after {
+     visibility: hidden;
+     display: block;
+     font-size: 0;
+     content: " ";
+     clear: both;
+     height: 0;
+     }
+.clearfix { display: inline-block; }
+/* start commented backslash hack \*/
+* html .clearfix { height: 1%; }
+.clearfix { display: block; }
+/* close commented backslash hack */
+
+/*********************box-sizing************************/
+
+html {
+    box-sizing:border-box;
+}
+
+*, *:before, *:after {
+box-sizing:inherit;
+}
+
+/*********************START OF OWN CODE************************/
+
+ body {
+    width: 1920px;
+    margin: 0 auto;
+    background-color:#231F20;
+    background-size:100%;
+}
+
+/*********************HEADER CODING************************/
+
+.logo {
+    width: 20%;
+    height: auto;
+    margin-left:780px;
+    margin-top:30px;
+    animation: movein 2s 1 forwards;
+}
+
+@keyframes movein {
+    0% {transform: scale(0.2, 0.2);}
+    100% {transform: scale(1, 1);}
+}
+
+h1 {
+    background-color:#231F20;
+    font-size: 120px;
+    font-family: 'Pacifico', cursive;
+    text-align:center;
+    color:white;
+    padding-bottom:10px;
+    opacity: 0;
+    animation: fadein 1s 1 forwards;
+    animation-delay: 2s;
+}
+
+@keyframes fadein {
+    0% {opacity:0;}
+    100%{opacity:1;}
+}
+
+/*********************END OF HEADER CODING************************/
+
+/*********************NAVIGATION CODING************************/
+
+nav {
+    width:45%;
+    margin:-60px auto;
+    background-color: #4B297A;
+    font-size: 50px;
+    display: block;
+    height: 60px;
+    opacity:0;
+    border-top: #C597C4 4px solid;
+    animation: drop 0.5s 1 forwards;
+    animation-delay:3s;
+}
+
+@keyframes drop {
+    0% {margin-top: -60px;}
+    100% {margin-top: 0px;
+    opacity:1;}
+}
+
+li {
+    display: block;
+    float: left;
+    width: 33.33%;
+    text-align:center;
+}
+
+li:hover {
+    animation: navstyle 0.2s 1 forwards;
+    cursor:pointer;
+}
+
+@keyframes navstyle {
+    100% {
+        border: #231F20 2px solid;
+        box-shadow: black 0px 10px 50px;
+    }
+}
+
+li a {
+    font-family: 'Poiret One', cursive;
+    color:white;
+    text-decoration: none;
+}
+
+/*********************END OF NAVIGATION CODING************************/
+
+/*********************FOOTER CODING************************/
+
+footer {
+    background-color:#231F20;
+    text-align:center;
+    font-family: 'Poiret One', cursive;
+    color:white;
+    height: 55px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.copyright {
+    float:left;
+    margin-left:50%;
+    margin-top:20px;
+}
+
+/*********************END OF FOOTER CODING************************/
+
+/*********************MULTIPLE SCREENS CODING************************/
+
+@media only screen and (max-width: 1040px) {
+    body {
+        width:1040px;
+    }
+
+    nav {
+        width:700px;
+    }
+
+    h1 {
+        font-size:95px;
+    }
+
+    .logo {
+        width:32%;
+        height:auto;
+        margin-top:10px;
+        margin-left:380px;
+    }
+
+    footer {
+        margin: 0 auto;
+    }
+}
+
+@media only screen and (max-width: 720px) {
+    body {
+        width:720px;
+    }
+
+    nav {
+        width:600px;
+    }
+
+    h1 {
+        font-size:90px;
+    }
+
+    .logo {
+        width:30%;
+        height:auto;
+        margin-top:10px;
+        margin-left:270px;
+    }
+
+    footer {
+        margin: 0 auto;
+    }
+}
+
+/*********************END OF MULTIPLE SCREENS CODING************************/

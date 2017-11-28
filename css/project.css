@@ -1,0 +1,393 @@
+/**********************meyers**************************/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: inherit;
+	vertical-align: baseline;
+}
+/* remember to define focus styles! */
+:focus {
+	outline: 0;
+}
+body {
+	line-height: 1;
+	color: black;
+	background: white;
+}
+ol, ul {
+	list-style: none;
+}
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+	border-collapse: separate;
+	border-spacing: 0;
+}
+caption, th, td {
+	text-align: left;
+	font-weight: normal;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: "";
+}
+blockquote, q {
+	quotes: "" "";
+}
+
+/**********************clearfix**************************/
+
+.clearfix:after {
+     visibility: hidden;
+     display: block;
+     font-size: 0;
+     content: " ";
+     clear: both;
+     height: 0;
+     }
+.clearfix { display: inline-block; }
+/* start commented backslash hack \*/
+* html .clearfix { height: 1%; }
+.clearfix { display: block; }
+/* close commented backslash hack */
+
+/*********************box-sizing************************/
+
+html {
+    box-sizing:border-box;
+}
+
+*, *:before, *:after {
+box-sizing:inherit;
+}
+
+/*********************START OF OWN CODE************************/
+
+/*********************BODY CODING************************/
+
+body {
+    background-image:url(../images/bg3.jpg);
+    margin: 0 auto;
+    width: 1920px;
+}
+
+/*********************END OF BODY CODING************************/
+
+/*********************HEADER CODING************************/
+
+.logo {
+    width: 13%;
+    height: auto;
+    margin-left: 2%;
+    float:left;
+}
+
+h1 {
+    background-color:#231F20;
+    font-size: 120px;
+    font-family: 'Pacifico', cursive;
+    text-align:center;
+    color:white;
+    padding-top:70px;
+    padding-bottom:85px;
+}
+
+/*********************END OF HEADER CODING************************/
+
+/*********************NAVIGATION CODING************************/
+
+nav {
+    background-color: #4B297A;
+    font-size: 50px;
+    display: block;
+    height: 60px;
+    border-top: #C597C4 4px solid;
+}
+
+li {
+    display: block;
+    float: left;
+    width: 33.33%;
+    text-align:center;
+}
+
+li:hover {
+    animation: navstyle 0.2s 1 forwards;
+    cursor:pointer;
+}
+
+@keyframes navstyle {
+    100% {
+        border: #231F20 2px solid;
+        box-shadow: black 0px 10px 50px;
+    }
+}
+
+li a {
+    font-family: 'Poiret One', cursive;
+    color:white;
+    text-decoration: none;
+}
+
+/*********************END OF NAVIGATION CODING************************/
+
+/*********************FOOTER CODING************************/
+
+footer {
+    background-color:#231F20;
+    text-align:center;
+    font-family: 'Poiret One', cursive;
+    color:white;
+    height: 55px;
+    position:fixed;
+    right: 0;
+    bottom: 0;
+    left: 0px;
+}
+
+.copyright {
+    float:left;
+    margin-left:50%;
+    margin-top:20px;
+}
+
+.toptop a{
+    color:#C597C4;
+    font-size:50px;
+    text-decoration: none;
+    margin-left:30%;
+}
+
+.toptop:hover {
+    animation: turn 1s 1 forwards;
+}
+
+@keyframes turn {
+    100%{
+        transform: rotateX(360deg);
+    }
+}
+
+/*********************END OF FOOTER CODING************************/
+
+/*********************MAIN CONTENT CODING************************/
+
+h2 {
+  color:#4B297A;
+  font-family: 'Poiret One', cursive;
+  font-size:75px;
+  font-weight:bold;
+  text-align:center;
+  padding-bottom:20px;
+  line-height:60px;
+}
+
+.photography, .graphics {
+    width:650px;
+    height:650px;
+    background-color:white;
+    border-radius:20px;
+    margin: 60px auto;
+    padding: 10px;
+    border: #C597C4 4px solid;
+    vertical-align: text-top;
+    text-align:center;
+    overflow-y:scroll;
+    overflow-x: hidden;
+}
+
+.graphics {
+    height:auto;
+    overflow:hidden;
+}
+
+/*********************END OF MAIN CONTENT CODING************************/
+
+/*********************PHOTOGRAPHY GALLERY CODING************************/
+
+#gallery .thumbnail {
+  width: 35%;
+  height:150px;
+  border: 2px solid #C597C4;
+  box-sizing: border-box;
+  display: inline-block;
+  cursor: pointer;
+}
+
+#overlay {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 2;
+  background-color: #231F20;
+  display: none;
+  opacity: 0;
+  transition: 0.2s;
+}
+
+#overlay.open {
+  display: block;
+  opacity: 1;
+  transition: 0.2s;
+}
+
+#overlay-container {
+  position: relative;
+  max-width: 1200px;
+  margin: 200px auto;
+}
+
+#overlay-close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  border: #C597C4 4px solid;
+  background-color: #4B297A;
+  padding-left:15px;
+  padding-right:15px;
+  cursor: pointer;
+  font-family: 'Poiret One', cursive;
+  font-size: 50px;
+  font-weight: bold;
+  color:#C597C4;
+}
+
+#overlay-image {
+  position: relative;
+  display: block;
+  max-width: 650px;
+  width: 100%;
+  border: 2px solid white;
+  margin: 0 auto;
+  top: 55px;
+}
+
+.overlay-image {
+  transition: 1s;
+  animation: fade-in .5s linear;
+}
+
+#gallery .thumbnail:hover {
+  transform: scale(1.025);
+  box-shadow: 2px 2px 25px 2px #231F20;
+
+}
+
+#overlay-close:hover {
+  transform: scale(1.025);
+  box-shadow: 2px 2px 25px 2px #231F20;
+}
+
+@keyframes fade-in {
+  0%   { opacity: 0;
+  transform: scale(.5)}
+  100% { opacity: 1;
+  transform: scale(1)}
+}
+
+/*********************END OF PHOTOGRAPHY GALLERY CODING************************/
+
+@media only screen and (max-width: 1040px) {
+    body {
+        width:1040px;
+    }
+
+    nav {
+        width:100%;
+        display:inline-block;
+        margin-top:-20px;
+
+    }
+
+    h1 {
+        font-size:90px;
+    }
+
+    .logo {
+        width:20%;
+        height:auto;
+        margin: 2%;
+    }
+
+    footer {
+        margin: 0 auto;
+    }
+
+    .copyright {
+    float:left;
+    margin-left:10%;
+    margin-top:20px;
+}
+
+.toptop a{
+    color:#C597C4;
+    font-size:50px;
+    text-decoration: none;
+    margin-left:40%;
+}
+
+
+    h2 {
+        font-size:60px;
+    }
+}
+
+@media only screen and (max-width: 720px) {
+    body {
+        width:720px;
+    }
+
+    nav {
+        width:100%;
+        display:inline-block;
+        margin-top:-22px;
+
+    }
+
+    h2 {
+        font-size:60px;
+    }
+
+    h1 {
+        font-size:72px;
+    }
+
+    .logo {
+        width:22%;
+        height:auto;
+        margin: 2%;
+    }
+
+    footer {
+        margin: 0 auto;
+    }
+
+    .copyright {
+    float:left;
+    margin-left:10%;
+    margin-top:20px;
+}
+
+.toptop a{
+    color:#C597C4;
+    font-size:50px;
+    text-decoration: none;
+    margin-left:40%;
+}
+}
+
+/*********************END OF MULTIPLE SCREENS CODING************************/
